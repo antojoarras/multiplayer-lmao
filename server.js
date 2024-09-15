@@ -28,12 +28,13 @@ io.on('connection', (socket) => {
       players[socket.id].x = data.x;
       players[socket.id].y = data.y;
       players[socket.id].name = data.name;
+      players[socket.id].msg = data.msg;
     }
     io.emit('updatePlayers', Object.values(players));
   });
   
-  socket.on('chat', (data) => {
-    io.emit('chat', [data[0], data[1]])
+  socket.on('msg upd', (data) => {
+    io.emit('msgs', data)
   })
 
   socket.on('disconnect', () => {
