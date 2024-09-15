@@ -1,20 +1,26 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Multiplayer</title>
   <style>
     body, html {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-      }
-    canvas {background-color: #f0f0f0; }
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    canvas { background-color: #f0f0f0; }
   </style>
 </head>
 <body>
+  <div id="chatArea" style="border: 1px solid black; word-wrap: break-word; overflow: auto;">
+    <p1 id="textPlace"></p1>
+  </div>
+  <button id="button" onclick="startGame()" style="background-color: lightgreen;">Play!</button>
+  <input type="text" id="input" placeholder="Place name here" maxlength="20">
   <canvas id="gameCanvas"></canvas>
+  <input type="text" id="chat" placeholder="What you wanna say huh?" maxlenght="30">
   <script src="/socket.io/socket.io.js"></script>
   <script src="script.js"></script>
 </body>
